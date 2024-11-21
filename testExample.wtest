@@ -1,9 +1,13 @@
-import example.pepita
+import personajes.*
+import misiones.*
 
-describe "group of tests for pepita" {
+describe "tests"{
+    const dibu = new Arquero(copas = 0, agilidad = 25, rango = 40)
+    const leia = new Guerrera(copas = 0, tieneEstrategia = false, fuerza = 100)
+    const marita = new Ballestero(copas = 0, agilidad = 0, rango = 101)
+    const unaMisionInd = new MisionIndividual(personaje = dibu, dificultad = 100)
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
-  }
-
+    test "supera mision individual"{
+        assert.that(unaMisionInd.realizar())
+    }
 }
